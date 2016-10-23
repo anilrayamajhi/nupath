@@ -108,7 +108,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/messages', messageThreadsRoutes);
 
 app.get('/api/giphy/:id', function(req, res){
-  request('http://api.giphy.com/v1/gifs/search?q=' + req.params.id + '&api_key=dc6zaTOxFJmzC', function(err, response, body){
+  request.get('http://api.giphy.com/v1/gifs/search?q=' + req.params.id + '&api_key=dc6zaTOxFJmzC', function(err, response, body){
     res.json(err || JSON.parse(body));
   });
 });
